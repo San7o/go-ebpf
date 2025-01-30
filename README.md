@@ -2,7 +2,7 @@
 
 This repository contains a simple example of using eBPF programs
 to log the access of certain files and create honeypots for
-malicious subjects.
+malicious actors.
 
 The code is intentionally higly-commented to provide an explaination
 of the examples and their usage.
@@ -33,6 +33,14 @@ go build && sudo ./ebpf-test
 When iterating on the C code, make sure to run both:
 ```bash
 go generate && go build && sudo ./ebpf-test
+```
+
+To test the application, you can compile a test program located
+in `test` that will call the traced funcion:
+
+```
+gcc test/open.c -o test
+./test
 ```
 
 ---
