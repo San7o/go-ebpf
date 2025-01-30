@@ -1,0 +1,5 @@
+*~
+*.o
+a.out
+bpf_bpfel.go
+bpf_bpfeb.go
