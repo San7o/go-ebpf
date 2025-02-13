@@ -1,4 +1,4 @@
-module ebpf-test
+module alert
 
 go 1.23.5
 

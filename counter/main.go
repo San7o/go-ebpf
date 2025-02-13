@@ -10,7 +10,7 @@ import (
 
 // To interact with the BPF program, we can (and should) generate
 // some go bindings using the following command:
-//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -tags linux bpf ebpf/c/counter.bpf.c
+//go:generate go run github.com/cilium/ebpf/cmd/bpf2go -tags linux bpf counter.bpf.c
 
 // userspace program to register the BPF program and read Its output
 func main() {

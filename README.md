@@ -18,24 +18,10 @@ To run any eBPF program you will need:
 
 ## Commands
 
-Generate the eBPF program and go bindings that will let us easily
-interact with the eBPF program. This is equivalent to generating
-a skelethon via bpftool:
-
+This repository contains two sample programs: counter and alert.
 ```bash
-go generate
-```
-
-Build and run the go application:
-
-```bash
-go build && sudo ./ebpf-test
-```
-
-When iterating on the C code, make sure to run both:
-
-```bash
-go generate && go build && sudo ./ebpf-test
+make counter
+make alert
 ```
 
 To test the application, you can compile a test program located
@@ -45,6 +31,8 @@ in `test` that will call the traced funcion:
 gcc test/open.c -o test
 ./test
 ```
+
+Bpf printk output can be viewed in `/sys/kernel/debug/tracing/trace_pipe`.
 
 ---
 
@@ -68,8 +56,3 @@ sudo ls /sys/kernel/tracing/events/<system>/<event>/
 ```
 
 You can also list `format/` to know the function arguments.
-
----
-
-TODO:
-- Use vmlinux.h
